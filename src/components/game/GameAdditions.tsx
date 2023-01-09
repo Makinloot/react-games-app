@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { IGames } from "../../api";
 
@@ -17,7 +18,7 @@ const GameAdditions: React.FC<{ data: IGames }> = ({ data }) => {
           {data && data.results.map((item) => {
             const { name, id } = item;
             return (
-              <a href={`/game/${id}`} key={id}>{name}</a>
+              <Link to={`/game/${id}`} key={id}>{name}</Link>
             );
           })}
         </div>
