@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header apiKey={RAWG_KEY} />
 
         <Routes>
           <Route path="/" element={<Home apiKey={RAWG_KEY} />} />

@@ -3,7 +3,6 @@ import { IGenreResults } from "../../api";
 const Genres: React.FC<{ data: IGenreResults[] }> = ({
   data,
 }): any => {
-  console.log(data);
 
   if (data) {
     const filteredGenres = data.filter((item) => item.name !== 'Platformer' && item.name !== "Educational")

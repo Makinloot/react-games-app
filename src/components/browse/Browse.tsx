@@ -26,8 +26,6 @@ const Browse: React.FC<{ apiKey: string }> = ({
     const { count, results } = dataBrowse;
     const genreResults = dataGenres.results;
 
-    console.log(genreResults)
-
     return (
       <div className="Browse">
         <div className="container">
