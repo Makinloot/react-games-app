@@ -3,7 +3,7 @@ import { IGames, IGameData, IScnreenshots } from "../api";
 
 // fetch list of games
 export function useFetch(url: string): [data: any, error: boolean, loading: boolean] {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<any>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 

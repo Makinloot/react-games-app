@@ -17,9 +17,7 @@ const Hero: React.FC<{ data: IGames | null }> = ({
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   if (data) {
-    const { results } = data;
-    const shuffled = results.sort(() => 0.5 - Math.random()); // shuffle results array
-    const selected = shuffled.slice(0, 5); // select first 5 elements from shuffled results array
+    // const { results } = data;
 
     return (
       <section className="Hero">
@@ -36,7 +34,7 @@ const Hero: React.FC<{ data: IGames | null }> = ({
               touchRatio={0}
               className="mySwiper2 Hero-primary"
             >
-              {thumbnailSlider(selected)}
+              {(data.results) && thumbnailSlider(data.results)}
             </Swiper>
             <Swiper
               onSwiper={setThumbsSwiper}
@@ -44,7 +42,7 @@ const Hero: React.FC<{ data: IGames | null }> = ({
               touchRatio={0}
               className="mySwiper Hero-secondary"
             >
-              {thumbnailThumbs(selected)}
+              {(data.results) && thumbnailThumbs(data.results)}
             </Swiper>
           </div>
         </div>
@@ -57,7 +55,10 @@ const Hero: React.FC<{ data: IGames | null }> = ({
 
 // return array of thumbnail slider elements
 function thumbnailSlider(data: IGameData[]) {
-  const sliders = data.map((slide) => {
+  const shuffled = data.sort(() => 0.5 - Math.random()); // shuffle results array
+  const selected = shuffled.slice(0, 5); // select first 5 elements from shuffled results array
+
+  const sliders = selected.map((slide) => {
     const { background_image, name, id } = slide;
     return (
       <SwiperSlide
@@ -89,7 +90,7 @@ function thumbnailThumbs(data: IGameData[]) {
         </div>
       </SwiperSlide>
     );
-  });
+  }).slice(0, 5);
   return sliders;
 }
 

@@ -165,4 +165,27 @@
       }
     }
   }
+
+  // breakpoints for swiper to display slides responsively
+  .swiper-container {
+    width: 380px;
+  }
+
+  @media screen and (min-width: 900px) {
+    .swiper-container {
+      width: 900px;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .swiper-container {
+      width: 700px;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .swiper-container {
+      width: 480px;
+    }
+  }
 }

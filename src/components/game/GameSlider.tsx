@@ -22,7 +22,7 @@ const GameSlider: React.FC<{
         spaceBetween={50}
         className="mySwiper"
       >
-        {trailerData &&
+        {(trailerData && trailerData.results) &&
           trailerData.results.map((video) => {
             const { preview } = video;
             const { max } = video.data;

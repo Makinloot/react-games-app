@@ -3,6 +3,8 @@ import { useFetch } from "../../hooks/useFetch";
 
 import GameSlider from "./GameSlider";
 import GameDetails from "./GameDetails";
+import SameSeries from "./SameSeries";
+import GameAdditions from "./GameAdditions";
 import Loading from "../utils/Loading";
 import Error from "../utils/Error";
 
@@ -23,29 +25,34 @@ const Game: React.FC<{ apiKey: string }> = ({ apiKey }): JSX.Element | null => {
 
   if (gameLoading) return <Loading />;
   else if (gameError) return <Error />;
-  else if(gameData) {
+  else if (gameData) {
     const dataGames: IGameData = gameData;
     const dataScreenshots: IScnreenshots = screenshotsData;
     const dataTrailers: ITrailers = trailersData;
     const dataAdditions: IGames = additionsData;
     const dataSeries: IGames = seriesData;
 
-    console.log(dataGames)
-
     return (
       <div className="Game">
         <div className="container">
           <div className="Game-wrapper">
             <h2>{dataGames.name}</h2>
-            <GameSlider trailerData={dataTrailers} sliderData={dataScreenshots.results} />
+            <GameSlider
+              trailerData={dataTrailers}
+              sliderData={dataScreenshots.results}
+            />
             <GameDetails data={dataGames} />
           </div>
+          <SameSeries data={dataSeries} />
+          {(dataAdditions && dataAdditions.results) && dataAdditions.results.length > 0 ? (
+            <GameAdditions data={dataAdditions} />
+          ) : null}
         </div>
       </div>
     );
   }
 
-  return null
+  return null;
 };
 
 export default Game;

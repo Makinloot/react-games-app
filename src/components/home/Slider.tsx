@@ -16,8 +16,6 @@ const Slider: React.FC<{ data: IGames | null }> = ({
   const { width } = document.body.getBoundingClientRect();
 
   if (data) {
-    const { results } = data;
-    const shuffled = results.sort(() => 0.5 - Math.random());
 
     return (
       <section className="Slider">
@@ -45,7 +43,7 @@ const Slider: React.FC<{ data: IGames | null }> = ({
                 }
               }}
             >
-              {freeModeSlider(shuffled)}
+              {data.results && freeModeSlider(data.results)}
             </Swiper>
           </div>
         </div>
@@ -57,7 +55,8 @@ const Slider: React.FC<{ data: IGames | null }> = ({
 };
 
 function freeModeSlider(data: IGameData[]) {
-  const slides = data.map((slide) => {
+  const shuffled = data.sort(() => 0.5 - Math.random());
+  const slides = shuffled.map((slide) => {
     const { background_image, id, name, rating, ratings_count, genres } = slide;
     return (
       <SwiperSlide className="Slider-slide" id={JSON.stringify(id)} key={id}>
