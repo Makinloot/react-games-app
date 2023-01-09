@@ -1,0 +1,64 @@
+.Game {
+  &-additions {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 2rem;
+    padding: 0.5rem;
+    background: $filter-nightblue;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:has(.Game-additions-wrapper.active) {
+      svg {
+        transform: rotate(180deg);
+      }
+
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+
+    h3 {
+      font-family: $ff-bold;
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 0.7rem;
+      right: 1rem;
+      transition: 0.3s;
+    }
+
+    &-wrapper {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    a {
+      display: block;
+      margin-top: 8px;
+      padding: 0.2rem 0.3rem;
+      background-color: $clr-dark;
+      font-size: calc($fs-small - 2px);
+      font-family: $ff-bold;
+      letter-spacing: 0.5px;
+
+      &:nth-child(odd) {
+        background-color: $clr-lightDark;
+      }
+
+      &:hover {
+        background-color: $clr-aquablue;
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+.Series {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 1rem 0 2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  user-select: none;
+  background: $filter-nightblue;
+
+  &-title {
+    display: block;
+    margin: 2rem 0 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    overflow-y: visible !important;
+  }
+
+  &-game {
+    margin-left: 0.5rem;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      .hover-details {
+        right: 0;
+      }
+    }
+
+    &:hover {
+      .hover-details {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &-game {
+    position: relative;
+    cursor: pointer;
+
+    .img-container {
+      position: relative;
+      height: 120px;
+
+      img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  h5 {
+    margin: 5px 0 0;
+    font-size: calc($fs-small - 2px);
+  }
+}
+
+.hover-details {
+  position: absolute;
+  z-index: 10000;
+  background: $filter-grey;
+  padding: 1rem;
+  bottom: calc(100% + 2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+    user-select: all;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $clr-dark;
+    border-radius: 0.5rem;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+
+  &-name {
+    font-family: $ff-bold;
+    text-transform: capitalize;
+  }
+
+  &-released {
+    margin: 0.5rem 0;
+    text-transform: capitalize;
+  }
+
+  &-img {
+    width: 300px;
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-reviews {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: $filter-steelblue;
+    text-transform: capitalize;
+
+    .reviews {
+      margin: 0.5rem 0 0;
+
+      span {
+        color: $clr-aquablue;
+      }
+    }
+  }
+
+  &-genres {
+    text-transform: capitalize;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    .genres-wrapper {
+      width: 100%;
+      max-width: 300px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .genre {
+        padding: 0.2rem 0.5rem;
+        background: $filter-steelblue;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.Series-slider {
+  margin: 2rem 0;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  user-select: none;
+  background: $filter-nightblue;
+
+  .slide {
+    padding: 0.5rem 0;
+    .img-container {
+      height: 120px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
