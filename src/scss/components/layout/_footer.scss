@@ -1,0 +1,38 @@
+.Footer {
+  margin: 4rem 0 2rem;
+
+  &-wrapper {
+    position: relative;
+    padding: .5rem;
+    border-radius: 0.5rem;
+    background: $filter-nightblue;
+  }
+
+  &-socials {
+    justify-content: space-between;
+
+    .footer-link {
+      @extend %link;
+      margin-right: 1rem;
+      font-size: $fs-small;
+    }
+
+    .socials {
+      gap: 0.5rem;
+    }
+
+    a > svg {
+      &:active {
+        scale: 0.9;
+        transition: 0.2s;
+      }
+    }
+
+    svg {
+      font-size: 1.5rem;
+      filter: invert(58%) sepia(84%) saturate(4941%) hue-rotate(165deg)
+        brightness(100%) contrast(101%) !important;
+      cursor: pointer;
+    }
+  }
+}

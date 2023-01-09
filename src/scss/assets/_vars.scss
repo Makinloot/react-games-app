@@ -1,0 +1,19 @@
+$ff-regular: "roboto", sans-serif;
+$ff-bold: "montserrat", sans-serif;
+
+$fs-small: 0.875rem;
+$fs-regular: 1rem;
+$fs-big: 1.5rem;
+
+$clr-white: #ffffff;
+$clr-whiteTr: rgba(255, 255, 255, 0.6);
+$clr-aquablue: #3796d4;
+$clr-aquablueDark: #276b99;
+$clr-nightblue: #0e1f30;
+$clr-dark: #2f2f2f;
+$clr-lightDark: rgba(82, 82, 82, 0.5);
+
+$filter-nightblue: linear-gradient(90deg, rgba(2,57,96,1) 24%, rgba(9,27,57,1) 100%, rgba(0,212,255,0) 100%, rgba(0,198,241,0) 100%);
+$filter-aquablue: linear-gradient(to right, #316282, #31678b, #316d94, #30729d, #3078a6);
+$filter-steelblue: linear-gradient(to right top, #545660, #4a4f5a, #404855, #36414f, #2b3a49);
+$filter-grey: linear-gradient(to right top, #999999, #8c92a0, #6f7e97, #657c9b, #537392);

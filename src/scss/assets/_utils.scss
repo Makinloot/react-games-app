@@ -1,0 +1,50 @@
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// flex classes
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  @extend %flex;
+}
+
+.flex-col {
+  @extend %flex;
+  flex-direction: column;
+}
+
+// links
+%link {
+  position: relative;
+  font-size: $fs-small;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+%link::after {
+  content: "";
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  width: 0%;
+  border: 0px solid;
+  transition: .2s;
+}
+
+%link:hover::after {
+  left: 0;
+  width: 100%;
+  border: 1px solid;
+}
+
+.link-primary {
+  @extend %link;
+}

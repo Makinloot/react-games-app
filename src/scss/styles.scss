@@ -1,7 +1,27 @@
-body {
-  background-color: black;
+@import "./assets/vars";
+@import "./assets/reset";
+@import "./assets/utils";
+
+@import "./components/layout/header";
+@import "./components/layout/footer";
+
+html {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+    user-select: all;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $clr-whiteTr;
+    border-radius: 0.5rem;
+  }
 }
 
-p {
-  background-color: red;
+body {
+  background-color: rgb(25, 40, 63);
+}
+
+.App {
+  min-height: 100vh;
 }
