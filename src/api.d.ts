@@ -97,3 +97,22 @@ interface ITrailerResults {
 export interface ITrailers extends IRoot {
   results: ITrailerResults[];
 }
+
+// genres types
+interface IGenreResults {
+  games: {
+    added: number;
+    id: number;
+    name: string;
+    slug: string
+  }[];
+  games_count: number;
+  id: number;
+  image_background: string;
+  name: string;
+  slug: string;
+}
+
+interface IGenres extends IRoot {
+  results: IGenreResults[]
+}

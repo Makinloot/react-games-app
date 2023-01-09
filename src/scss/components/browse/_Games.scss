@@ -1,0 +1,27 @@
+.Browse {
+  &-games {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 4rem;
+
+    &-details {
+      align-items: flex-start;
+      gap: 4px;
+      text-transform: capitalize;
+      margin: 0.5rem 0;
+    }
+
+    &-img {
+      width: 100%;
+
+      img {
+        border: 2px solid #ccc;
+        border-radius: 2px;
+        object-fit: contain;
+      }
+    }
+  }
+}

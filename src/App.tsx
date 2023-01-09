@@ -8,6 +8,7 @@ import Home from "./components/home/Home";
 import Game from "./components/game/Game";
 import Error from "./components/utils/Error";
 import List from "./components/list/List";
+import Browse from "./components/browse/Browse";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home apiKey={RAWG_KEY} />} />
           <Route path="/game/:id" element={<Game apiKey={RAWG_KEY} />} />
           <Route path={`/search/:name/:page`} element={<List apiKey={RAWG_KEY} />} />
+          <Route path={`/browse/:page`} element={<Browse apiKey={RAWG_KEY} />} />
           <Route path="*" element={<Error />} />
         </Routes>
 
