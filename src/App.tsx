@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./css/styles.css";
-import { RAWG_KEY } from "../settings.json";
 
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
@@ -12,6 +11,7 @@ import Browse from "./components/browse/Browse";
 import BrowseGenres from "./components/browse/BrowseGenres";
 
 function App() {
+  const RAWG_KEY = `887b6defc3eb48e29fc17957435d6240`
   return (
     <Router>
       <div className="App">
