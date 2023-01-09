@@ -1,8 +1,8 @@
 // root response
 interface IRoot {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   user_platforms?: boolean;
 }
 
@@ -68,4 +68,32 @@ export interface IGameData {
 // fetch games
 export interface IGames extends IRoot {
   results: IGameData[];
+}
+
+// screenshot result types
+interface IScreenResults {
+  height: number;
+  id: number;
+  image: string;
+  is_deleted: boolean;
+  width: number;
+}
+
+export interface IScnreenshots extends IRoot {
+  results: IScreenResults[]
+}
+
+// trailer result types
+interface ITrailerResults {
+  data: {
+    480: string;
+    max: string;
+  },
+  id: number;
+  name: string;
+  preview: string;
+}
+
+export interface ITrailers extends IRoot {
+  results: ITrailerResults[];
 }
