@@ -6,7 +6,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper";
 // types
-import { IGameData, IGames } from "../../api";
+import { IGames } from "../../api";
 
 const SameSeriesSlider: React.FC<{ data: IGames }> = ({ data }) => {
   return (

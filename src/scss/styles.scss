@@ -8,6 +8,8 @@
 @import "./components/home/hero";
 @import "./components/home/slider";
 @import "./components/game/game";
+@import "./components/list";
+@import "./components/pagination";
 
 html {
   &::-webkit-scrollbar {
