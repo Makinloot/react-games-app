@@ -18,7 +18,7 @@ const GameAdditions: React.FC<{ data: IGames }> = ({ data }) => {
           {data && data.results.map((item) => {
             const { name, id } = item;
             return (
-              <Link to={`/game/${id}`} key={id}>{name}</Link>
+              <a href={`/game/${id}`} key={id}>{name}</a>
             );
           })}
         </div>
