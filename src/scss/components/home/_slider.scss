@@ -1,0 +1,83 @@
+.Slider {
+  margin: 2rem 0;
+  padding: 0.5rem 0;
+  user-select: none;
+
+  &-title {
+    display: block;
+    margin: 0 0 1rem 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+  }
+
+  &-slide {
+    transition: 0.2s;
+
+    &:active {
+      scale: 0.98;
+    }
+  }
+
+  &-img {
+    height: 275px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    pointer-events: none;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    margin: 1rem 0 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    pointer-events: none;
+
+    h4 {
+      font-family: $ff-bold;
+      font-size: $fs-small;
+    }
+
+    strong {
+      display: block;
+      margin-top: 4px;
+      font-size: $fs-small;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: capitalize;
+    }
+
+    p {
+      margin-top: 2px;
+      font-size: $fs-small;
+      text-transform: capitalize;
+    }
+  }
+
+
+  // breakpoints for swiper to display slides responsively
+  .swiper-container {
+    width: 480px;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .swiper-container {
+      width: 1200px;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .swiper-container {
+      width: 1000px;
+    }
+  }
+  
+  @media screen and (min-width: 650px) {
+    .swiper-container {
+      width: 650px;
+    }
+  }
+}

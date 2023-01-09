@@ -4,6 +4,9 @@
 
 @import "./components/layout/header";
 @import "./components/layout/footer";
+@import "./components/loading";
+@import "./components/home/hero";
+@import "./components/home/slider";
 
 html {
   &::-webkit-scrollbar {

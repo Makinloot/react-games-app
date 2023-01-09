@@ -14,7 +14,10 @@
     "concurrently": "^7.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.1"
+    "react-loader-spinner": "^5.3.4",
+    "react-router-dom": "^6.6.1",
+    "swiper": "^8.4.5",
+    "swiper-react": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
