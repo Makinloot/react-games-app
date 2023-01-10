@@ -39,11 +39,11 @@ const SameSeriesSlider: React.FC<{ data: IGames }> = ({ data }) => {
               const { background_image, name, id } = slide;
               return (
                 <SwiperSlide className="slide" key={id}>
-                  <Link to={"/game/" + id} title={name}>
+                  <a href={"/game/" + id} title={name}>
                     <div className="img-container">
                       <img src={background_image} alt={name} />
                     </div>
-                  </Link>
+                  </a>
                 </SwiperSlide>
               );
             })}
