@@ -10,8 +10,9 @@ import List from "./components/list/List";
 import Browse from "./components/browse/Browse";
 import BrowseGenres from "./components/browse/BrowseGenres";
 
+import { RAWG_KEY } from "../settings.json";
+
 function App() {
-  const RAWG_KEY = `887b6defc3eb48e29fc17957435d6240`
   return (
     <Router>
       <div className="App">

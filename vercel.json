@@ -1,9 +1,0 @@
-{
-  "rewrites":  [
-    {"source": "/(.*)", "destination": "/"},
-    {"source": "/game/:id", "destination": "/"},
-    {"source": "/search/:name/:page", "destination": "/"},
-    {"source": "/browse/:page", "destination": "/"},
-    {"source": "/browse/:genre/:page", "destination": "/"}
-  ]
-}
