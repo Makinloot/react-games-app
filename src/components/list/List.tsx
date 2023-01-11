@@ -3,6 +3,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 import Loading from "../utils/Loading";
 import Error from "../utils/Error";
+import SearchError from "../utils/SearchError";
 import Pagination from "../utils/Pagination";
 // types
 import { IGameData, IGames } from "../../api";
@@ -12,7 +13,7 @@ const List: React.FC<{ apiKey: string }> = ({ apiKey }): JSX.Element | null => {
   const url = `https://api.rawg.io/api/games?key=${apiKey}&search=${name}&search_exact=true&exclude_additions=true&ordering=metacritic=50,100&page=${page}&page_size=10&metacritic=50,100`;
   const [data, error, loading] = useFetch(url);
 
-  if (error) return <Error />;
+  if (error) return <SearchError />;
   else if (loading) return <Loading />;
   else if (data) {
     const dataGame: IGames = data;

@@ -11,6 +11,8 @@
 @import "./components/list";
 @import "./components/pagination";
 @import "./components/browse/Browse";
+@import "./components/error/error";
+@import "./components/error/searchError";
 
 html {
   &::-webkit-scrollbar {

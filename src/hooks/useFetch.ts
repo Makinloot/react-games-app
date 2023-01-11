@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { IGames, IGameData, IScnreenshots } from "../api";
 
-// fetch list of games
-export function useFetch(url: string): [data: any, error: boolean, loading: boolean] {
+export function useFetch(
+  url: string
+): [data: any, error: boolean, loading: boolean] {
   const [data, setData] = useState<any>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -11,13 +12,13 @@ export function useFetch(url: string): [data: any, error: boolean, loading: bool
     (async (): Promise<void> => {
       setError(false);
       setLoading(true);
-      try {
-        const res = await fetch(url);
-        const jsonData = await res.json();
-        setData(jsonData);
-      } catch (err) {
-        setError(true);
-      }
+
+      const res = await fetch(url);
+      const jsonData = await res.json();
+      if (res.ok) setData(jsonData);
+      else setError(true);
+      if (jsonData.results && jsonData.results.length < 1) setError(true);
+
       setLoading(false);
     })();
   }, []);

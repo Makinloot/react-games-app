@@ -1,0 +1,16 @@
+.Search-error {
+  &-wrapper {
+    min-height: 70vh;
+  }
+
+  p {
+    font-family: $ff-bold;
+    font-size: 2rem;
+    color: rgb(160, 24, 0);
+    text-align: center;
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+}
