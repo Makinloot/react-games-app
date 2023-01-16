@@ -13,7 +13,7 @@ const Browse: React.FC<{ apiKey: string }> = ({
   apiKey,
 }): JSX.Element | null => {
   const { page } = useParams();
-  const url = `https://api.rawg.io/api/games?key=${apiKey}&page=${page}&page_size=10&metacritic=80,100&exclude_additions=true&ordering=-updated`;
+  const url = `https://api.rawg.io/api/games?key=${apiKey}&page=${page}&page_size=10&metacritic=1,100&exclude_additions=true&ordering=-updated`;
   const genresUrl = `https://api.rawg.io/api/genres?key=${apiKey}`;
   const [data, error, loading] = useFetch(url);
   const [genresData] = useFetch(genresUrl);

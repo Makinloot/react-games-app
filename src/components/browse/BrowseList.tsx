@@ -14,7 +14,7 @@ const BrowseList: React.FC<{data: IGameData[]}> = ({ data }):JSX.Element | null 
           <div className="Browse-games-details flex-col">
             <h4>Information about the game</h4>
             <div className="detail"><strong>name:</strong> {name}</div>
-            <div className="detail"><strong>date:</strong> {released.split("-")[0]}</div>
+            <div className="detail"><strong>date:</strong> {released && released.split("-")[0]}</div>
             <div className="detail"><strong>genre:</strong> {genres && genres.map(genre => genre.name).join(', ')}</div>
             <div className="detail"><strong>platforms:</strong> {platforms && platforms.map(platform => platform.platform.name).join(', ')}</div>
           </div>

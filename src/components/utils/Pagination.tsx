@@ -5,13 +5,14 @@ type TPagiation = {
   endpoint: string;
 }
 
-const Pagination:React.FC<TPagiation> = ({ count, endpoint }): JSX.Element => {
+const Pagination:React.FC<TPagiation> = ({ count, endpoint }): JSX.Element | null => {
   const { page } = useParams();
-  const pagesLength = Math.floor(count / 10) + 1;
-
-  return (
+  const pagesLength = Math.floor(count / 10);
+  console.log(pagesLength)
+  if(pagesLength <= 1) return null
+  else return (
+    
     <div className="Pagination flex-row">
-
       {/* first page */}
       {Number(page) !== 1 ? <a href={`${endpoint}/1`}><i className="fa-solid fa-angles-left"></i></a> : null }
 
@@ -34,7 +35,6 @@ const Pagination:React.FC<TPagiation> = ({ count, endpoint }): JSX.Element => {
 
       {/* last page */}
       {Number(page) !== pagesLength ? <a href={`${endpoint}/${pagesLength}`}><i className="fa-solid fa-angles-right"></i></a> : null }
-
     </div>
   )
 }

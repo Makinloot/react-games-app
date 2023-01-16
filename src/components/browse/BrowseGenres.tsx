@@ -12,7 +12,7 @@ import { IGames, IGenres } from "../../api";
 
 const BrowseGenres: React.FC<{apiKey: string}> = ({ apiKey }) => {
   const { page, genre } = useParams();
-  const url = `https://api.rawg.io/api/games?key=${apiKey}&page=${page}&page_size=10&genres=${genre}&metacritic=80,100&exclude_additions=true&ordering=-updated`;
+  const url = `https://api.rawg.io/api/games?key=${apiKey}&page=${page}&page_size=10&genres=${genre}&metacritic=1,100&exclude_additions=true&ordering=-updated`;
   const genresUrl = `https://api.rawg.io/api/genres?key=${apiKey}`;
   const [data, error, loading] = useFetch(url);
   const [genresData] = useFetch(genresUrl);
@@ -32,7 +32,7 @@ const BrowseGenres: React.FC<{apiKey: string}> = ({ apiKey }) => {
           <div className="Browse-wrapper">
             <BrowseList data={results} />
           </div>
-          <Pagination count={count} endpoint={`/browse`} />
+          <Pagination count={count} endpoint={`/browse/${genre}`} />
         </div>
       </div>
     );

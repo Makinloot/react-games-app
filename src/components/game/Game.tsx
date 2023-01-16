@@ -9,6 +9,7 @@ import Loading from "../utils/Loading";
 import Error from "../utils/Error";
 
 import { IGameData, IScnreenshots, ITrailers, IGames } from "../../api";
+import { useEffect } from "react";
 
 const Game: React.FC<{ apiKey: string }> = ({ apiKey }): JSX.Element | null => {
   const { id } = useParams();

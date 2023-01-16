@@ -10,7 +10,7 @@ import { IGameData, IGames } from "../../api";
 
 const List: React.FC<{ apiKey: string }> = ({ apiKey }): JSX.Element | null => {
   const { name, page } = useParams();
-  const url = `https://api.rawg.io/api/games?key=${apiKey}&search=${name}&search_exact=true&exclude_additions=true&ordering=metacritic=50,100&page=${page}&page_size=10&metacritic=50,100`;
+  const url = `https://api.rawg.io/api/games?key=${apiKey}&search=${name}&search_exact=true&exclude_additions=true&page=${page}&page_size=10&ordering=-updated`;
   const [data, error, loading] = useFetch(url);
 
   if (error) return <SearchError />;

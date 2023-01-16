@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { IGames, IGameData, IScnreenshots } from "../api";
 
 export function useFetch(
-  url: string
+  url: string,
 ): [data: any, error: boolean, loading: boolean] {
   const [data, setData] = useState<any>([]);
   const [error, setError] = useState(false);
