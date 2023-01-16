@@ -36,7 +36,7 @@ const List: React.FC<{ apiKey: string }> = ({ apiKey }): JSX.Element | null => {
                       key={id}
                     >
                       <div className="list-image">
-                        <img src={background_image} alt={name} />
+                        <img src={background_image || 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'} alt={name} />
                       </div>
                       <div className="list-title">
                         <h3>{name}</h3>
